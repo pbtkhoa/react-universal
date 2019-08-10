@@ -4,7 +4,7 @@ import LoadingBar from "react-redux-loading-bar";
 import routes from "./routes";
 import "./assets/scss/app.scss";
 
-const App = (
+const App = () => (
   <div className="test">
     <LoadingBar style={{ backgroundColor: "blue", height: "5px" }} />
     {renderRoutes(routes)}

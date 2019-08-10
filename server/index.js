@@ -49,10 +49,12 @@ app.get("*", async (req, res) => {
         : null;
     })
     .map(
+      /* eslint-disable */
       async actions =>
         await Promise.all(
           (actions || []).map(p => p && new Promise(resolve => p.then(resolve).catch(resolve)))
         )
+      /* eslint-enable */
     );
 
   // Wait for all the loadData functions, if they are resolved, send the rendered html to browser.
@@ -70,6 +72,6 @@ app.get("*", async (req, res) => {
 
 Loadable.preloadAll().then(() => {
   app.listen(port, () => {
-    console.log(`Listening on port: ${port}`);
+    console.log(`Listening on port: ${port}`); // eslint-disable-line
   });
 });

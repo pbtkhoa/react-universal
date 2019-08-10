@@ -8,15 +8,15 @@ import { Helmet } from "react-helmet";
 import { I18nextProvider } from "react-i18next";
 import serialize from "serialize-javascript";
 import App from "@src/App";
-import stats from "./../react-loadable.json";
+import stats from "../react-loadable.json";
 
 export default (req, store, context) => {
-  let modules = [];
-  let locale = req.language;
-  let resources = req.i18n.getResourceBundle(locale, "common");
-  let i18nClient = { locale, resources };
+  const modules = [];
+  const locale = req.language;
+  const resources = req.i18n.getResourceBundle(locale, "common");
+  const i18nClient = { locale, resources };
 
-  let i18nServer = req.i18n.cloneInstance();
+  const i18nServer = req.i18n.cloneInstance();
   i18nServer.changeLanguage(locale);
   const content = renderToString(
     <Loadable.Capture report={moduleName => modules.push(moduleName)}>
