@@ -29,7 +29,7 @@
     "redux": "^4.0.4",
     "redux-form": "^8.2.5",
     "redux-thunk": "^2.3.0",
-    "serialize-javascript": "^1.7.0",
+    "serialize-javascript": "^2.1.1",
     "terser-webpack-plugin": "^1.4.1",
     "webpack": "^4.39.1",
     "webpack-bundle-analyzer": "^3.4.1",
